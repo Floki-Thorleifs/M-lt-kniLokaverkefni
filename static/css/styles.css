@@ -10,7 +10,7 @@ label {
   font-size: 24pt;
 }
 
-html {
+.every {
   display: flex;
   flex-direction: column;
 }

@@ -3,27 +3,30 @@
     <title>Flask app</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
-<body>
-  <form action="/submit" method="post">
-    <div>
-        <label for="Msg">Setning sem á að þýða:</label>
-        <input type="text" name="Msg" />
-    </div>
-    <div class='btn'>
-        <button type="submit">Þýða</button>
-    </div>
-    <p class='trans'>
-        Fyrir þýðingu: {{original}}
-    </p>
-    <br>
-    <p class='trans'>
+  <div class="every">
+
+      <body>
+          <form action="/submit" method="post">
+            <div>
+                <label for="Msg">Setning sem á að þýða:</label>
+                <input type="text" name="Msg" />
+            </div>
+            <div class='btn'>
+                <button type="submit">Þýða</button>
+            </div>
+            <p class='trans'>
+                Fyrir þýðingu: {{original}}
+            </p>
+            <br>
+            <p class='trans'>
         Eftir þýðingu: {{translation}}
     </p>
     </form>
 </body>
 <footer>
-        <form action="/english">
-            <button>English -> Icelandic</button>
-        </form>
+    <form action="/english">
+        <button>English -> Icelandic</button>
+    </form>
 </footer>
+</div>
 </html>
