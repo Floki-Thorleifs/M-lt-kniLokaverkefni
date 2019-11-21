@@ -16,7 +16,7 @@ SV1;\
 )"}
 
 
-def translate(to_translate, to_language="en", from_language="is"):
+def translate(to_translate, to_language, from_language):
     base_link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s"
     to_translate = urllib.parse.quote(to_translate)
     link = base_link % (to_language, from_language, to_translate)

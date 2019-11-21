@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+<body>
+    <form action="/ensubmit" method="post">
+        <div>
+            <label for="Msg">Sentence you want to translate:</label>
+            <input type="text" name="Msg" />
+        </div>
+        <div>
+            <button type="submit">Translate</button>
+        </div>
+    <p class='trans'>
+        Original: {{original}}
+    </p>
+    <br>
+    <p class='trans'>
+        Translation: {{translation}}
+    </p>
+</body>
+</html>

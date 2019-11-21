@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<header>
-
-</header>
+<head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
 <body>
   <form action="/submit" method="post">
     <div>
@@ -11,8 +12,13 @@
     <div>
         <button type="submit">Þýða</button>
     </div>
-    Fyrir þýðingu: {{original}}
+    </form>
+    <p class='trans'>
+        Fyrir þýðingu: {{original}}
+    </p>
     <br>
-    Eftir þýðingu: {{translation}}
+    <p class='trans'>
+        Eftir þýðingu: {{translation}}
+    </p>
 </body>
 </html>

@@ -19,25 +19,33 @@ with open('is-en.txt', encoding='UTF-8') as file:
                     newEns = newEns + i
             words.append((isl[0].lower(), newEns))
 newDict = dict(words)
+enWords = []
+with open('en-is.txt', encoding='UTF-8') as file:
+    csv_reader = csv.reader(file, delimiter='\t')
+    for line in csv_reader:
+        en = line[0].split(' ')
+        newEn = ''
+        if len(en) < 3:
+            for i in en:
+                if '(' not in i:
+                    newEn = newEn + i + ' '
+            isl = ''
+            for i in line[1].split(' '):
+                if '{' not in i and '[' not in i:
+                    isl = isl + i
+            enWords.append((newEn.lower(), isl.lower()))
+enDict = dict(enWords)
 
-conn = None
-try:
-    conn = sqlite3.connect('gogn.db')
-except Error as e:
-    print(e)
 
-
-""" x = input('Skrifaðu setningu sem á að þýða: ').split(' ')
-if x[0] == "":
-    x = [x[1]]
-while x[0] != 'stop':
+def translateSent(x):
     newSent = ''
-    for i in x:
+    a = x.split(' ')
+    for i in a:
         newWord = getWord(i)
         if newWord.lower() in newDict:
             word = newDict[newWord.lower()]
         else:
-            word = translate(i.strip(" "))
+            word = translate(i.strip(" "), 'en', 'isl')
         # print(i, ' -> ', newWord, ' -> ', word)
         if i[0].isupper():
             word = word.capitalize()
@@ -49,23 +57,19 @@ while x[0] != 'stop':
         if i != saves:
             finalSent = finalSent + i + ' '
         saves = i
-    print(finalSent)
-    x = input('Skrifaðu setningu sem á að þýða: ').split(' ' )"""
+    return finalSent
 
 
-def translateSent(x):
+def translateEn(x):
     newSent = ''
     a = x.split(' ')
     for i in a:
-        newWord = getWord(i)
-        if newWord.lower() in newDict:
-            word = newDict[newWord.lower()]
+        if i.lower() in enDict:
+            word = enDict[i.lower()]
         else:
-            word = translate(i.strip(" "))
-        # print(i, ' -> ', newWord, ' -> ', word)
-        if i[0].isupper():
-            word = word.capitalize()
+            word = translate(i, 'is', 'en')
         newSent = newSent + word + ' '
+        print(word)
     saves = ""
     finalSent = ""
     newSents = newSent.split(" ")

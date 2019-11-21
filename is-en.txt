@@ -3482,7 +3482,7 @@ erlendur gjaldeyrir {k}	foreign exchange	noun
 Ermarsundseyjar {kv.ft}	Channel Islands	noun	[geogr.] 
 Ermarsund {hv}	English Channel	noun	[geogr.] 
 ermi {kv}	sleeve	noun	
-Er {hv}	am
+Er {hv}	is
 Er morgunmatur innifalinn?	Is breakfast included?		
 Er sturta í herberginu?	Is there a shower in the room?		
 erting {kv}	irritation	noun	[med.] 
