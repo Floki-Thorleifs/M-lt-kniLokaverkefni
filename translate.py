@@ -38,6 +38,9 @@ enDict = dict(enWords)
 
 
 def translateSent(x):
+    print(x)
+    if x.lower() == 'if lykkja':
+        return 'Það er if setning ekki if lykkja!'
     newSent = ''
     a = x.split(' ')
     for i in a:
@@ -61,6 +64,8 @@ def translateSent(x):
 
 
 def translateEn(x):
+    if x.lower() == 'if loop':
+        return "it's if statement not if loop"
     newSent = ''
     a = x.split(' ')
     for i in a:

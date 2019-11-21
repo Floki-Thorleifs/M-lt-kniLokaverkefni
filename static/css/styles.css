@@ -9,6 +9,11 @@ body {
 label {
   font-size: 24pt;
 }
+
+html {
+  display: flex;
+  flex-direction: column;
+}
 .btn {
   display: flex;
   justify-content: space-around;
