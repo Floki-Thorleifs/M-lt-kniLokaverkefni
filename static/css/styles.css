@@ -6,6 +6,9 @@ body {
   font-size: 16pt;
 }
 
+label {
+  font-size: 24pt;
+}
 .btn {
   display: flex;
   justify-content: space-around;
