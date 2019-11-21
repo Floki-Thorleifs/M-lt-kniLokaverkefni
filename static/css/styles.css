@@ -5,3 +5,8 @@ body {
 .trans {
   font-size: 16pt;
 }
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+}
