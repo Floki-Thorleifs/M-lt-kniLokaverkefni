@@ -69,7 +69,6 @@ def translateEn(x):
         else:
             word = translate(i, 'is', 'en')
         newSent = newSent + word + ' '
-        print(word)
     saves = ""
     finalSent = ""
     newSents = newSent.split(" ")
