@@ -15,6 +15,9 @@ SV1;\
 .NET CLR 3.0.04506.30\
 )"}
 
+# Þýðingar fall: Tekur inn orðið sem á að þýða, upprunalegt tungumál og
+# tungumál sem á að þýða yfir í.
+
 
 def translate(to_translate, to_language, from_language):
     base_link = "http://translate.google.com/m?hl=%s&sl=%s&q=%s"

@@ -14,6 +14,9 @@ SV1;\
 .NET CLR 3.0.04506.30\
 )"}
 
+# Fall sem að kallar á API hjá BÍN og skilar stofnorði orðisins.
+# Ef það er ekki til þá skilar fallið bara upprunalega orðinu aftur.
+
 
 def getWord(to_translate):
     base_link = "https://bin.arnastofnun.is/api/beygingarmynd/%s"
