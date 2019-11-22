@@ -1,7 +1,5 @@
-import nltk
 import csv
 from google import translate
-import sqlite3
 from sqlite3 import Error
 from mybin import getWord
 
