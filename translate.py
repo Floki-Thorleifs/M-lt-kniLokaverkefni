@@ -9,11 +9,11 @@ with open('is-en.txt', encoding='UTF-8') as file:
     csv_reader = csv.reader(file, delimiter='\t')
     for line in csv_reader:
         isl = line[0].split(' ')
-        if len(isl) == 2 and ('{' in isl[1] or '[' in isl[1]):
+        if len(isl) < 3:
             ens = line[1].split(' ')
             newEns = ''
             for i in ens:
-                if '<' not in i:
+                if '<' not in i and '[' not in i:
                     newEns = newEns + i
             words.append((isl[0].lower(), newEns))
 newDict = dict(words)
@@ -34,21 +34,39 @@ with open('en-is.txt', encoding='UTF-8') as file:
             enWords.append((newEn.lower(), isl.lower()))
 enDict = dict(enWords)
 
+egg = [105, 102, 32, 108, 121, 107, 107, 106, 97]
+paskar = ''
+for i in egg:
+    paskar = paskar + chr(i)
+what = [105,102,32,115,116,97,116,101,109,101,110,116]
+bunny = ''
+for a in what:
+    bunny = bunny + chr(a)
+basket = [105,102,32,108,111,111,112]
+kanina = ''
+for s in basket:
+    kanina = kanina + chr(s)
+karfa = [105,102,32,115,101,116,110,105,110,103]
+easter = ''
+for k in karfa:
+    easter = easter + chr(k)
+
 
 def translateSent(x):
-    print(x)
-    if x.lower() == 'if lykkja':
-        return 'if statement'
+    if x.lower() == paskar:
+        return bunny
     newSent = ''
     a = x.split(' ')
     for i in a:
-        newWord = getWord(i)
-        if newWord.lower() in newDict:
-            word = newDict[newWord.lower()]
+        if i.lower() in newDict:
+            word = newDict[i.lower()]
         else:
-            word = translate(i.strip(" "), 'en', 'isl')
-        # print(i, ' -> ', newWord, ' -> ', word)
-        if i[0].isupper():
+            newWord = getWord(i)
+            if newWord.lower() in newDict:
+                word = newDict[newWord.lower()]
+            else:
+                word = translate(i.strip(" "), 'en', 'isl')
+        if i.istitle():
             word = word.capitalize()
         newSent = newSent + word + ' '
     saves = ""
@@ -62,8 +80,8 @@ def translateSent(x):
 
 
 def translateEn(x):
-    if x.lower() == 'if loop':
-        return "if setning"
+    if x.lower() == kanina:
+        return easter
     newSent = ''
     a = x.split(' ')
     for i in a:

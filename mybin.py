@@ -21,5 +21,5 @@ def getWord(to_translate):
     link = base_link % (to_translate)
     request = urllib.request.Request(link, headers=agent)
     with urllib.request.urlopen(link) as url:
-        data = json.loads(url.read().decode('utf-8'))
+        data = json.loads(url.read())
     return data[0]['ord'] if type(data) == 'list' else to_translate

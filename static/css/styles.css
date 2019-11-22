@@ -9,6 +9,17 @@ body {
 label {
   font-size: 24pt;
 }
+button {
+  border-radius: 5pt;
+  border: 1pt solid black;
+  background-color: lightgray;
+  padding: 2pt;
+}
+
+input {
+  border-radius: 5pt;
+  height: 16pt;
+}
 
 .every {
   display: flex;

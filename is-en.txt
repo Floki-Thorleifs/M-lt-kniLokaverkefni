@@ -5296,7 +5296,7 @@ halli {k}	deficit [loss]	noun
 halli {k}	inclination	noun	
 halli {k}	slope	noun	
 hallæri {hv}	famine	noun	
-Halló!	Hello!		
+Halló	Hello		
 Haltu (þér) fast!	Hold fast!		
 haltur	lame [limping]	adj	
 haltur	limping	adj	
